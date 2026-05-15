@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace '史上无敌测试服'
+    namespace 'com.xuexitong.pingking'
     compileSdk 35
 
     defaultConfig {
-        applicationId "史上无敌测试服"
+        applicationId "com.xuexitong.pingking"
         minSdk 21
         targetSdk 34
         versionCode 1

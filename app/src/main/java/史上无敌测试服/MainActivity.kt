@@ -1,4 +1,4 @@
-package 史上无敌测试服
+package com.xuexitong.pingking
 
 import android.annotation.SuppressLint
 import android.app.Activity
