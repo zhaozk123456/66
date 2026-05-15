@@ -1,0 +1,10 @@
+Game_name:拼习通;
+Game_key:8f67dc0a5df969;
+Title_img:image.png;
+Title_bgm:s_Title.mp3;
+Textbox_theme:imss;
+Default_Language:zh_CN;
+Package_name:史上无敌测试服;
+Game_Logo:qidonfengmian.png;
+Description:这是一款纪念app;
+Enable_Appreciation:false;

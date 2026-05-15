@@ -1,0 +1,918 @@
+; 初始场景，以及特效演示
+bgm:s_Title.mp3;
+unlockBgm:s_Title.mp3 -name=雲を追いかけて;
+changeBg:3b beijingj.png;
+setAnimation:enter-from-left -target=fig-left -next;
+; 模版修改演示
+2026年5月17日:欢迎打开我开发的游戏 -v1.wav -fontSize=large;
+miniAvatar:å£è¯4_no_bg_hurh63l7.png;
+愿此项目会留下一点点回忆   ;
+setTextbox:hide;
+changeFigure:none -left;
+changeFigure:none -next;
+; =========================================================
+; 《拼好饭King与斜方肌斜方肌King系统》
+; WebGAL 短篇纪念向 Galgame 脚本
+; 建议文件名：start.txt
+; 角色：
+; {pname}：玩家 / 主角 / 吐槽役
+; 贾hz：男性发小，拼好饭King，斜方肌斜方肌King系统宿主
+; 肖yh：发小异性朋友，清醒吐槽型正常人，虽然正常程度会逐渐下降
+; 斜方肌King系统：拼好饭King斜方肌斜方肌King系统
+; =========================================================
+
+getUserInput:pname -title=请输入你的大名 -buttonText=确认;
+setTextbox:on -next;
+miniAvatar:kuazhang.png;
+{pname}:你的手机在夜里亮了起来。;
+
+changeBg:å®ç«ï¼.jpg -next;
+changeBg:message.png;
+changeFigure:none;
+changeFigure:选择立绘文件;
+pixiInit;
+intro:有些旅行，叫计划。|有些旅行，叫临时起意。|而有些旅行，叫姓贾把你拖进石家庄徒步副本。 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+这是旁白:这里不是旁白;
+:旁白 屏幕上，是贾hz发来的消息。;
+:那一刻，空气安静得像欠费停机。;
+
+miniAvatar:æ­£å¸¸111.png;
+贾hz:下周有空不？;
+
+miniAvatar:lezi.png;
+{pname}:你这个消息开头让我有点不安。;
+{pname}:一般你这么问，不是搬东西，就是让我陪你干一些接近人类理智边缘的事。;
+
+贾hz:去石家庄博物馆。;
+
+{pname}:？我去;
+{pname}:你突然这么有文化，我有点害怕。;
+
+贾hz:顺便徒步。;
+
+{pname}:合理了。;
+{pname}:前半句像文化活动，后半句像膝盖服刑。;
+
+贾hz:我还叫了个朋友。;
+
+{pname}:男的女的？;
+miniAvatar:2lihui.png;
+setTextbox:on;
+
+贾hz:好朋友。;
+
+{pname}:我去 你终于决定让正常人类|闺蜜监督你的人类行为了？;
+
+贾hz:别尬黑，我平时很正常|很正经;
+
+miniAvatar:stand2.webp;
+{pname}:你上次把拼好饭叫作“当代青年赛博食堂”，我至今没想明白|把永劫当成固游 压抑成啥样了;
+
+贾hz:那叫哲学。;
+
+{pname}:那tm叫你穷。;
+
+changeBg:meituan.png -next;
+setAnimation:shake -target=bg-main -next;
+
+miniAvatar:none;
+斜方肌King系统:【拼好饭King斜方肌斜方肌King系统已启动】;
+斜方肌King系统:检测到关键词：石家庄、博物馆、徒步、压抑、拼好饭。;
+斜方肌King系统:当前任务：陪同贾hz完成石家庄博物馆与徒步纪念行动。;
+斜方肌King系统:任务难度：中。 -fontSize=large;
+斜方肌King系统:精神污染等级：高。;
+斜方肌King系统:建议携带：水、纸巾、充电宝，以及对所有人最低限度的包容。;
+
+{pname}:斜方肌King系统你来得太早了。;
+
+斜方肌King系统:【提示】请勿相信贾hz的任何一句“我都安排好了”。;
+
+贾hz:我都安排好了。;
+
+changeBg:chezhan.png;
+miniAvatar:lezi.png;
+{pname}:你看，诈骗短信都没你这么精准。;
+
+changeBg:éä¸­ç·1ï¼å¤è²ï¼.jpg;
+choose:相信贾hz的安排:route_trust|要求他发详细路线:route_route|直接问有没有饭:route_food;
+
+label:route_trust;
+miniAvatar:æ­£å¸¸111.png;
+{pname}:OK，我相信你。;
+
+贾hz:这才对嘛。;
+
+changeBg:meituan.png;
+斜方肌King系统:【警告】玩家选择了高风险选项。;
+斜方肌King系统:贾hz路线可信度：17%。;
+斜方肌King系统:友情滤镜强度：83%。;
+changeBg:å³ç¯çå®¿èç§æOFFï¼.jpg;
+jumpLabel:after_plan;
+
+label:route_route;
+changeFigure:none;
+{pname}:你把路线发我看看。;
+
+贾hz:等下。;
+
+:三十秒后，贾hz发来了一张地图截图和一张预约截图;
+changeFigure:kuazhang.png;
+:截图糊得像刚从古墓里挖出来的石碑拓片。;
+
+{pname}:你这是路线图，还是文物影像资料？;
+
+贾hz:能看懂就行。;
+
+miniAvatar:kuazhang.png;
+{pname}:你这个清晰度，博物馆都得给它单独开个展。;
+jumpLabel:after_plan;
+
+label:route_food;
+{pname}:先别说别的，中午吃什么？;
+
+贾hz:这你就问到核心了。;
+bgm:s_Title.mp3;
+
+changeBg:King2.png;
+changeBg:meituan.png;
+斜方肌King系统:【检测到拼好饭King领域波动】;
+斜方肌King系统:领域名称：九块九的尊严。;
+
+贾hz:我会根据价格、热量、距离、出餐速度，综合判断最优解。;
+
+{pname}:你能不能别像分析国家经济形势一样分析拼好饭？;
+jumpLabel:after_plan;
+
+label:after_plan;
+:出发前夜的聊天到这里暂时告一段落。;
+:虽然这趟旅行还没开始，但荒诞感已经提前抵达。;
+:{pname}看着手机，沉默了三秒。;
+:人类最奇怪的地方，就是明知道有些事会很累，还是会去。;
+:尤其当那个人是贾hz.........;
+:你嫌他吵，嫌他嘴硬，嫌他路线规划像随机生成。;
+:但他一开口，你还是会答应。;
+:这可能就是长期绑定损友斜方肌King系统的代价。;
+
+{pname}:行，下周见。;
+
+贾hz:妥。;
+贾hz:记得穿舒服点。;
+
+{pname}:你这话怎么像副本开荒前的最后提醒。;
+
+changeFigure:none;
+changeBg:666.png;
+斜方肌King系统:【第一章结束】;
+changeBg:éä¸­ç·1ï¼å¤è²ï¼.jpg;
+斜方肌King系统:称号获得：被迫上线的NPC。;
+
+; =========================================================
+; 第二章：石家庄博物馆，但是三个人都像展品
+; =========================================================
+
+changeBg:bg_museum_gate.jpg -next;
+changeBg:2b beijing.png;
+intro:第二章|石家庄博物馆，但是三个人都像展品。;
+
+changeFigure:åæ.png -left -next;
+setAnimation:enter-from-left -target=fig-left -next;
+贾hz:你来了。;
+changeFigure:none;
+
+{pname}:你居然比我早。;
+这不科学。;
+
+贾hz:我一直很守时。;
+
+{pname}:你上次迟到二十分钟，说自己车没电。;
+
+贾hz:那是偶然事件。;
+
+changeFigure:选择立绘文件 -right -next;
+setAnimation:enter-from-right -target=fig-right -next;
+changeFigure:222lihui touxiang.png;
+setAnimation:glitchFilm;
+肖yh:你们好。;
+
+贾hz:介绍一下，这是肖yh。;
+changeFigure:1lihui.png;
+changeFigure:none;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:你好，我听他说你们是給......;
+
+{pname}:准确说，是长期互相攻击但尚未解除绑定的situation;
+
+肖yh:这个描述听起来比“关系很好”可信多了。;
+
+miniAvatar:èµ·åºæ°çæ°.png;
+贾hz:别听他乱说，我们平时很正常。;
+
+{pname}:你看，他又开始了。;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:你们来之前做攻略了吗？;
+miniAvatar:æ­£å¸¸111.png;
+miniAvatar:选择小头像;
+
+贾hz:做了。;
+
+{pname}:不是你tm收藏了三个短视频，截图了两张地图，然后宣布自己已经掌握石家庄。 我天天看白宫我还攻略过白宫呢;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:6666666666666666666这也算攻略？;
+
+miniAvatar:æ­£å¸¸111.png;
+{pname}:在他的认知里，这已经是博士论文。;
+
+贾hz:真正的旅行靠感觉。;
+
+{pname}:靠感觉是吧？上次你靠感觉把我们带到了停车场入口。;
+
+changeFigure:none;
+playEffect:v1.wav;
+changeBg:meituan.png;
+斜方肌King系统:【检测到贾hz自信值异常升高】;
+斜方肌King系统:导航可信度下降。;
+changeBg:beijing.png;
+斜方肌King系统:建议开启“别信他”模式。;
+
+choose:认真看展:route_culture|攻击贾hz讲解水平:route_attack|装作自己懂历史:route_fake;
+
+label:route_culture;
+{pname}:先进去吧，认真看展。;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:这个选择很健康。;
+miniAvatar:åæ.png;
+
+贾hz:我也是这么想的。;
+
+{pname}:你别急着蹭理智，这不是你规划出来的结果。;
+jumpLabel:museum_inside;
+
+label:route_attack;
+{pname}:贾hz，你先讲讲这里有什么值得看的。;
+
+贾hz:那肯定是历史文化。;
+{pname}:你这句话的信息量，像一碗没有放面的面汤。
+miniAvatar:232323232xyhhhhhhhh.png;
+;
+
+肖yh:我开始理解你们的交流方式了。;
+jumpLabel:museum_inside;
+
+miniAvatar:æ­£å¸¸111.png;
+label:route_fake;
+{pname}:其实我对历史也略懂一点。;
+
+贾hz:真的假的？;
+
+{pname}:当然。比如博物馆里的东西，一般都很有历史。;
+
+changeFigure:232323232xyhhhhhhhh.png;
+肖yh:这句话正确得毫无意义。;
+
+changeBg:meituan.png;
+斜方肌King系统:【社死风险 +10】;
+斜方肌King系统:建议玩家停止无证装懂。;
+jumpLabel:museum_inside;
+
+label:museum_inside;
+changeFigure:none;
+changeBg:ChatGPT Image _27.png -next;
+:三人走进展厅。;
+changeBg:2222222222museem.png;
+:灯光安静，展柜整齐。;
+:文物隔着玻璃沉默地看着现代人类。;
+:大概也在想：这届游客怎么这么吵。;
+
+miniAvatar:kuazhang.png;
+贾hz:你看这个展品，一看就很有历史感。;
+
+{pname}:废话，放博物馆里的东西一般很少有未来感。;
+
+miniAvatar:2lihui.png;
+肖yh:你这讲解好像没什么信息量。;
+miniAvatar:å£è¯4_no_bg_hurh63l7.png;
+
+贾hz:真正的历史不在说明牌上，在人的斜方肌里。;
+
+{pname}:斜方肌King系统，给他静音。;
+
+changeBg:meituan.png;
+斜方肌King系统:【检测到贾hz正在无证讲解】;
+斜方肌King系统:当前可信度：12%。;
+斜方肌King系统:建议操作：让他闭嘴，或者给他一瓶水堵住输出端口。;
+
+肖yh:你们两个不是来博物馆的。;
+
+miniAvatar:åæ.png;
+{pname}:那我们像什么？;
+
+miniAvatar:2lihui.png;
+肖yh:像是被博物馆临时收编的展品hhhhhhhh;
+
+miniAvatar:å£è¯4_no_bg_hurh63l7.png;
+贾hz:那我应该放在哪个展区？;
+
+{pname}:现当代嘴硬青年专题展 huo当代软工废物青年show;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:旁边可以配说明牌：该物种常见于拼好饭、徒步路线和迷路现场。;
+
+miniAvatar:çæ°å§å±.png;
+贾hz:你们这是群体攻击。;
+
+{pname}:不，这是多人cosplay;
+
+:肖yh拿起手机，给展柜和大厅拍照。;
+:贾hz也跟着拍。;
+:只不过他的姿势不像游客，更像某种正在发表重要讲话的基层干部。;
+
+changeFigure:none;
+{pname}:你能不能自然一点？;
+
+贾hz:我这叫有气场  其实现实里i人是e人的玩具;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:确实。;
+肖yh:有一种“拼好饭King视察民情”的气场。;
+
+斜方肌King系统:【隐藏称号解锁】;
+changeBg:King.png;
+斜方肌King系统:拼好饭King。;
+miniAvatar:kuazhang.png;
+
+贾hz:这个称号不错。;
+
+{pname}:你别真接受啊。;
+changeFigure:none -left;
+; =========================================================
+; 第三章：拼好饭审判
+; =========================================================
+
+changeBg:2222222222museem.png -next;
+changeBg:2b beijing.png;
+intro:第三章|拼好饭审判。;
+
+changeBg:ChatGPT Image _27.png;
+:从博物馆出来时，太阳已经升高。;
+:文化熏陶结束，实物需求开始上桌。;
+:人类文明发展数千年，最后还是要面对同一个问题。;
+miniAvatar:çæ°å§å±.png;
+changeBg:223333beijing.png;
+:中午吃什么。;
+
+贾hz:现在进入关键环节。;
+changeBg:666.png;
+{pname}:终于要参观真正的石家庄了吗？;
+
+贾hz:不。;
+贾hz:吃饭。;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:你看起来很认真。;
+
+miniAvatar:333touxiang.png;
+贾hz:吃饭这件事，不能儿戏。;
+changeFigure:none;
+changeBg:222beijing.png;
+{pname}:尤其是当预算进入个位数区间时。;
+
+斜方肌King系统:【拼好饭King进入领域展开】;
+斜方肌King系统:领域名称：九块九的尊严。;
+斜方肌King系统:效果：全员消费欲望下降，吐槽能力提升。;
+
+贾hz:这个套餐，米饭、鸡腿、青菜，价格低于人类理智下限。;
+
+{pname}:你能不能别像评价金融产品一样评价套餐？;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:他说得还挺有道理。;
+
+{pname}:完了，正常人也开始被污染了。;
+
+贾hz:这叫消费降级中的精神升级。;
+
+{pname}:不，这叫你饿疯了。;
+
+playEffect:v1.wav;
+choose:听贾hz推荐拼好饭:food_king|选择正常餐厅海底捞:food_normal|剪刀石头布决定|不吃直接徒步:food_bad;
+
+label:food_king;
+miniAvatar:æ­£å¸¸111.png;
+{pname}:行，今天听拼好饭King的。;
+
+贾hz:明智 要听也要听好的 买可乐也要买好的....;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:我有点期待了。;
+changeFigure:none;
+miniAvatar:000.png;
+{pname}:别期待太高。;
+拼好饭的核心魅力，就是让你在吃之前相信人生还有希望。;
+changeBg:King2.png;
+setAnimation:shake;
+
+changeBg:King.png;
+miniAvatar:stand2.webp;
+斜方肌King系统:【午餐路线：拼好饭King线】;
+斜方肌King系统:饱腹值 +60。;
+斜方肌King系统:钱包损伤 -20。;
+斜方肌King系统:精神污染 +15。;
+jumpLabel:after_food;
+
+label:food_normal;
+changeFigure:åæ.png -left;
+{pname}:我们还是找个正常餐厅吧。;
+
+贾hz:你这是背叛性价比。;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:偶尔也可以背叛一下。;
+changeFigure:none;
+{pname}:hhh 出来玩我的胃想活得体面一点。;
+
+changeBg:meituan.png;
+斜方肌King狗团斜方肌King系统:【午餐路线：尊严保卫线】;
+斜方肌King狗团斜方肌King系统:饱腹值 +70。;
+斜方肌King狗团斜方肌King系统:钱包损伤 +40。;
+斜方肌King狗团斜方肌King系统:贾hz怨念 +25。;
+changeBg:lihui222.png;
+jumpLabel:after_food;
+
+label:food_random;
+{pname}:随机吧，命运会安排。;
+
+miniAvatar:æ­£å¸¸111.png;
+贾hz:你这不是吃饭，你这是开盲盒。（河南腔）;
+
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:听起来有点危险。;
+
+miniAvatar:lezi.png;
+{pname}:人生本来就是大型盲盒。;
+
+changeBg:lihui222.png;
+斜方肌King狗团斜方肌King系统:【午餐路线：肠胃盲盒线】;
+斜方肌King狗团斜方肌King系统:未知风险 +50。;
+斜方肌King狗团斜方肌King系统:节目效果 +80。;
+jumpLabel:after_food;
+
+label:food_bad;
+miniAvatar:lezi.png;
+setTextbox:hide;
+{pname}:不吃了，直接徒步。;
+
+playEffect:v1.wav -volume=100;
+贾hz:你确定？;
+
+miniAvatar:222lihui touxiang.png;
+肖yh:这听起来不是很科学。 -left;
+
+miniAvatar:lezi.png;
+{pname}:我想挑战一下极限。;
+
+setAnimation:shake;
+changeBg:2b beijingj.png;
+斜方肌King狗团斜方肌King系统:【严重警告】|！！！;
+斜方肌King狗团斜方肌King系统:玩家选择了不符合人类生理常识的路线。;
+斜方肌King狗团斜方肌King系统:斜方肌斜方肌King狗团斜方肌King系统稳定性下降。;
+斜方肌King狗团斜方肌King系统:即将进入坏结局预警。;
+jumpLabel:bad_ending;
+
+label:after_food;
+changeBg:bg_restaurant.jpg -next;
+:午饭最终以一种并不伟大但足够真实的方式解决了。;
+changeBg:222beijing.png;
+:桌上的饭菜冒着热气。;
+miniAvatar:ChatGPT Imag 10_24_57.png;
+:贾hz拿着筷子，神情严肃得像刚完成一场国际谈判。;
+changeBg:222beijing.png;
+
+changeFigure:ChatGPT Imag 10_24_57.png -left;
+贾hz:我宣布，这顿饭总体合格。;
+
+changeFigure:000.png -left; 
+miniAvatar:lezi.png;
+{pname}:合格你个大坝 石家庄吃的也就比开封多一点点;
+
+miniAvatar:2lihui.png;
+肖yh:他平时吃饭都这样吗？ -fontSize=large;
+
+{pname}:他平时还会打分。;
+
+miniAvatar:kuazhang.png;
+贾hz:这是对食物的尊重。;
+
+miniAvatar:lezi.png;
+{pname}:这tm是对商家的精神审计（bushi）。;
+
+miniAvatar:2lihui.png;
+肖yh:那今天几分？;
+
+贾hz:八分。;
+
+{pname}:扣的两分是什么？;
+
+miniAvatar:çæ°å§å±.png;
+贾hz:没有灵魂。;
+
+{pname}:一份套餐九块九，你还想让它给你唱《青花瓷》吗？ -fontSize=large;
+changeFigure:none;
+changeFigure:000.png;
+changeFigure:000.png -right;
+changeFigure:none -right;
+changeFigure:none;
+changeFigure:none -left;
+changeBg:2b beijingj.png;
+斜方肌King狗团斜方肌King系统:【午餐完成】;
+斜方肌King狗团斜方肌King系统:拼好饭King声望 +30。;
+斜方肌King狗团斜方肌King系统:徒步准备度 +20。贾hz不嘻嘻;
+
+changeBg:King.png;
+changeBg:00000.png;
+changeBg:King2.png;
+changeBg:00000.png;
+changeBg:666.png;
+; =========================================================
+; 第四章：徒步开始，嘴硬结束
+; =========================================================
+
+changeBg:3b beijingj.png -next;
+intro:第四章没了（熬不住了 先留个悬念）|徒步开始，嘴硬结束。（大合照就不放剧情了）|Composition: z剧情：zkx |调色：zkx 友情出演：xyh |以下均为豆包生成 -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+
+:下午的风吹过街边树叶。;
+:阳光不算刺眼，路也不算难走。;
+:于是贾hz做出了一个i人不会做的决定 拍合照;
+:他说，下雨天拍不了出片的  但DOUbao可以帮你实现;
+changeFigure:none;
+changeFigure:none;
+贾hz:这段路并不很轻松。（合照）;
+
+{pname}:听见了吗？（真写不动脚本）;
+changeBg:333endddddd.png;
+jumpLabel:label_1;
+这是下雨出不了片的;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:你们要走多久？;
+
+贾hz:不远。;
+
+{pname}:他嘴里的“不远”，一般是导航软件和人类膝盖会产生分歧的距离。;
+
+斜方肌King系统:【徒步模式启动】;
+斜方肌King系统:当前天气：适合出行。;
+斜方肌King系统:当前体力：良好。;
+斜方肌King系统:贾hz嘴硬指数：91%。;
+
+:三人沿着路往前走。;
+:一开始，气氛还算轻松。;
+:贾hz甚至走出了某种王者巡游的步伐。;
+:二十分钟后，王者明显开始掉帧。;
+
+贾hz:我感觉还行。;
+
+{pname}:你每次说还行的时候，状态都已经很不行了。;
+miniAvatar:232323232xyhhhhhhhh.png;
+肖yh:要不要休息一下？;
+
+贾hz:不用，我真不累。;
+
+{pname}:你额头上的汗都快申请独立建国了。;
+
+贾hz:这是身体在排出懒惰。;
+changeBg:666.png;
+{pname}:不，这是身体在报警。;
+intro:谢谢收看|Exit: J拍摄：zkx|纪念：jhz的义父————————zkx -fontSize=medium -backgroundColor=rgba(0, 0, 0, 1) -fontColor=rgba(255, 255, 255, 1) -animation=fadeIn -delayTime=1500;
+intro:最后|愿考研的顺利|实习的也顺利|会见特朗普的不顺利|下雨天顺顺利利|未完待续Gameover 2026年5月17日 |安卓开发第一回
+斜方肌King系统:【检测到贾hz正在嘴硬】;
+斜方肌King系统:当前体力：37%。;
+斜方肌King系统:嘴硬程度：98%。;
+斜方肌King系统:建议：给水，给台阶，给他一点人类尊严。;
+
+choose:递水但继续吐槽:walk_water|放慢脚步等他:walk_wait|继续嘲讽他:walk_mock|和肖yh聊天:walk_linyou;
+changeBg:00000.png;
+label:walk_water;
+{pname}:喝水。;
+
+贾hz:我不渴。;
+
+{pname}:你不是不渴，你是怕承认自己是碳基生物。;
+
+肖yh:他嘴上很损，但还是递水了。;
+
+{pname}:别误会，这是为了防止他倒下之后我还得搬运。;
+
+斜方肌King系统:【隐藏温情值 +20】;
+jumpLabel:after_walk_choice;
+
+label:walk_wait;
+{pname}:慢点走吧，不急。;
+
+贾hz:我真没事。;
+
+{pname}:知道你没事。;
+就是我的鞋想欣赏一下石家庄的地面。;
+
+肖yh:这个台阶给得很自然。;
+
+斜方肌King系统:【发小羁绊值 +25】;
+jumpLabel:after_walk_choice;
+
+label:walk_mock;
+{pname}:贾hz，你现在像一个低电量还强行开性能模式的手机。;
+
+贾hz:你闭嘴。;
+
+{pname}:急了。;
+
+肖yh:你们这种交流方式真的不会打起来吗？;
+
+{pname}:不会。;
+我们攻击的是尊严，不是肉体。;
+
+斜方肌King系统:【喜剧值 +30】;
+斜方肌King系统:【贾hz怨念 +10】;
+jumpLabel:after_walk_choice;
+
+label:walk_linyou;
+{pname}:你今天感觉怎么样？;
+
+肖yh:挺有意思的。;
+本来以为是普通博物馆旅行，没想到像误入了你们的发小生态纪录片。;
+
+{pname}:纪录片名我都想好了。;
+《嘴硬动物观察实录》。;
+
+肖yh:那贾hz是什么动物？;
+
+{pname}:拼好饭栖息地常见雄性发小。;
+
+斜方肌King系统:【治愈值 +15】;
+jumpLabel:after_walk_choice;
+
+label:after_walk_choice;
+changeBg:bg_trail_sunset.jpg -next;
+:路继续往前。;
+:下午慢慢滑向傍晚。;
+:贾hz的脚步不再像王者巡游，更像斜方肌King系统更新到百分之九十九后卡住。;
+
+贾hz:我没累。;
+贾hz:我只是进入低功耗模式。;
+
+{pname}:你这不是低功耗。;
+你这是斜方肌King系统准备关机。;
+
+肖yh:你们两个真的很像那种互相嫌弃但谁也离不开谁的组合。;
+
+{pname}:别乱说。;
+我们只是长期绑定的损友生态斜方肌King系统。;
+
+贾hz:说得对。;
+而且这个斜方肌King系统无法卸载。;
+
+{pname}:主要是卸载成本太高。;
+涉及童年黑历史、共同尴尬记忆，以及你欠我的两瓶水。;
+
+肖yh:听起来很珍贵。;
+
+{pname}:听起来很麻烦。;
+
+贾hz:珍贵和麻烦不冲突。;
+
+:这一句倒是有点像人话。;
+:可惜从贾hz嘴里说出来，总让人怀疑他下一秒会补一句“所以今晚还吃拼好饭吗”。;
+
+贾hz:所以今晚还吃拼好饭吗？;
+
+{pname}:我就知道。;
+
+斜方肌King系统:【检测到发小稳定性正常】;
+斜方肌King系统:互损频率：健康。;
+斜方肌King系统:友情状态：无法卸载。;
+
+; =========================================================
+; 第五章：纪念性CG，夕阳下的离谱友情
+; =========================================================
+
+changeBg:bg_sunset_photo_spot.jpg -next;
+intro:第五章|纪念性CG，夕阳下的离谱友情。;
+
+:傍晚的光落在路边。;
+:博物馆、午饭、徒步、迷路边缘的自信，以及一路上的废话，终于都变成了这一天的背景。;
+:肖yh举起手机。;
+
+肖yh:站近一点，我给你们拍一张。;
+
+贾hz:我要摆个有纪念意义的姿势。;
+
+{pname}:你别摆出那种“拼好饭King登基”的样子。;
+
+贾hz:你懂什么，这叫精神图腾。;
+
+{pname}:我只看到一个累到灵魂出窍的人类还在维护尊严。;
+
+肖yh:好了，三、二、一。;
+
+setTextbox:hide;
+changeBg:cg_sunset_group_photo.jpg -next;
+unlockCg:cg_sunset_group_photo.jpg -name=拼好饭King与斜方肌斜方肌King系统 -series=1;
+: ;
+setTextbox:on;
+
+斜方肌King系统:【纪念照片生成成功】;
+斜方肌King系统:本日关键词：博物馆、拼好饭、徒步、嘴硬、斜方肌、发小。;
+斜方肌King系统:隐藏评价：这不是一次完美旅行。;
+斜方肌King系统:但很像你们会一起记很久的那种破事。;
+
+changeFigure:jiahz_normal.png -left -next;
+changeFigure:linyou_smile.png -right -next;
+
+肖yh:今天还挺开心的。;
+
+贾hz:那当然，我规划能力很强。;
+
+{pname}:你所谓的规划，是指中途迷路两次，拼好饭三选一失败一次，最后靠导航续命？;
+
+贾hz:结果是好的，过程不重要。;
+
+{pname}:这句话建议刻你墓志铭上。;
+
+肖yh:不过你们关系真的挺好。;
+
+贾hz:没有，普通发小。;
+
+{pname}:对，普通到他走累了我还得帮他拿水，像个移动后勤单位。;
+
+贾hz:这叫兄弟协同。;
+
+{pname}:这叫我上辈子欠你一份拼好饭。;
+
+斜方肌King系统:【最终选择】;
+斜方肌King系统:请选择本次旅行的纪念方向。;
+
+choose:发小友情线:ending_friend|三人友情线:ending_three|拼好饭King线:ending_foodking;
+
+label:ending_friend;
+changeBg:bg_sunset_photo_spot.jpg -next;
+intro:结局一|无法卸载的发小斜方肌King系统。;
+
+贾hz:下次还来不？;
+
+{pname}:你先把路线规划明白。;
+
+贾hz:那就是来。;
+
+{pname}:……你这人最烦的地方，就是偶尔还挺懂我。;
+
+贾hz:那肯定。;
+发小不是白当的。;
+
+{pname}:确实。;
+一般人也不可能忍你这么多年。;
+
+斜方肌King系统:【结局达成】;
+斜方肌King系统:无法卸载的发小斜方肌King系统。;
+斜方肌King系统:发小羁绊值：MAX。;
+斜方肌King系统:斜方肌耐久度：-47。;
+斜方肌King系统:纪念性：极高。;
+jumpLabel:true_end;
+
+label:ending_three;
+changeBg:bg_sunset_photo_spot.jpg -next;
+intro:结局二|庄里三人组今日成立。;
+
+肖yh:我本来以为今天是普通旅行。;
+
+{pname}:你现在后悔还来得及。;
+
+肖yh:不后悔。;
+就是感觉人类物种确实很多样。;
+
+贾hz:这说明我们有文化冲击力。;
+
+{pname}:你只是有冲击力，没有文化。;
+
+肖yh:下次你们去哪？;
+
+贾hz:可以再研究。;
+
+{pname}:研究可以，但别让他单独做攻略。;
+
+肖yh:懂了。;
+以后我负责正常部分，你负责吐槽，他负责离谱。;
+
+贾hz:这个分工怎么听起来我最吃亏？;
+
+{pname}:因为这是事实。;
+
+斜方肌King系统:【结局达成】;
+斜方肌King系统:庄里三人组今日成立。;
+斜方肌King系统:队伍稳定性：良好。;
+斜方肌King系统:抽象浓度：持续上升。;
+jumpLabel:true_end;
+
+label:ending_foodking;
+changeBg:bg_restaurant_night.jpg -next;
+intro:结局三|九块九的王冠。;
+
+贾hz:真正的King，不需要豪华餐厅证明自己。;
+
+{pname}:确实。;
+只需要一份拼好饭和一颗不怕踩雷的心。;
+
+肖yh:我竟然觉得有点热血。;
+
+{pname}:别怕，这是低血糖引发的错觉。;
+
+贾hz:今晚我请。;
+
+{pname}:你请什么？;
+
+贾hz:拼好饭。;
+
+{pname}:你这个“请客”有一种不给钱包造成任何创伤的美。;
+
+肖yh:但好像还挺适合今天。;
+
+斜方肌King系统:【结局达成】;
+斜方肌King系统:九块九的王冠。;
+斜方肌King系统:拼好饭King声望：999。;
+斜方肌King系统:钱包状态：平安。;
+斜方肌King系统:尊严状态：微妙。;
+jumpLabel:true_end;
+
+label:bad_ending;
+changeBg:bg_trail_afternoon.jpg -next;
+intro:坏结局|斜方肌斜方肌King系统崩溃。;
+
+:不吃饭直接徒步，是一种非常有人类特色的愚蠢。;
+:它包含了自信、贫穷、嘴硬，以及对身体机能的错误理解。;
+
+贾hz:我感觉……还行。;
+
+{pname}:你这句话听起来像遗言。;
+
+肖yh:真的不休息吗？;
+
+贾hz:不用。;
+
+斜方肌King系统:【严重警告】;
+斜方肌King系统:贾hz体力值归零。;
+斜方肌King系统:拼好饭King失去王冠。;
+斜方肌King系统:斜方肌斜方肌King系统过载。;
+
+setAnimation:shake -target=bg-main -next;
+
+贾hz:我承认……有点饿。;
+
+{pname}:历史性时刻。;
+嘴硬王第一次承认自己是人类。;
+
+肖yh:所以我们现在去吃饭？;
+
+{pname}:去。;
+再不去，他就要从发小变成遗址了。;
+
+斜方肌King系统:【坏结局达成】;
+斜方肌King系统:称号获得：不做人后勤。;
+斜方肌King系统:本次旅行纪念性：极高。;
+斜方肌King系统:舒适度：没有这种东西。;
+jumpLabel:true_end;
+
+label:true_end;
+changeBg:bg_system_dark.jpg -next;
+intro:尾声|有些破事，过几天就忘了。|有些破事，会在很多年后被突然提起。|比如那天的石家庄，博物馆，徒步，还有拼好饭King。;
+
+斜方肌King系统:【最终报告】;
+斜方肌King系统:石家庄博物馆纪念值 +100。;
+斜方肌King系统:徒步成就 +80。;
+斜方肌King系统:拼好饭King声望 +999。;
+斜方肌King系统:斜方肌耐久度 -47。;
+斜方肌King系统:发小羁绊：已无法卸载。;
+
+{pname}:所以这趟旅行的意义到底是什么？;
+
+贾hz:纪念。;
+
+肖yh:纪念什么？;
+
+贾hz:纪念我们来过。;
+
+{pname}:也纪念你差点走到低功耗关机。;
+
+贾hz:你能不能别破坏气氛？;
+
+{pname}:不能。;
+这是我的角色设定。;
+
+肖yh:那下次还一起吗？;
+
+:风吹过来。;
+:城市的灯慢慢亮起。;
+:三个人站在路边，没有马上回答。;
+:有些答案不需要立刻说出口。;
+:毕竟，只要发小还会发来一句“下周有空不”，斜方肌King系统就会再次启动。;
+
+斜方肌King系统:【拼好饭King斜方肌斜方肌King系统休眠中】;
+斜方肌King系统:等待下一次离谱出行。;
+
+end;

@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace '史上无敌测试服'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "史上无敌测试服"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    splits {
+        // Configures multiple APKs based on ABI.
+//        abi {
+//            enable true
+//            reset()
+//            include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+//            universalApk true
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    aaptOptions {
+        noCompress['.keep_gz']
+    }
+    applicationVariants.all { variant ->
+        variant.mergeAssetsProvider.configure {
+            doFirst {
+                renameFiles("${projectDir}/src/main/assets", ".gz", ".keep_gz")
+                println "---> Rename src files: *.gz to *.keep_gz at: " + projectDir;
+            }
+            doLast {
+                def assetsDir = "${project.layout.buildDirectory.get().asFile}/intermediates/assets/${variant.dirName}"
+                renameFiles(assetsDir, ".keep_gz", ".gz")
+                println "---> Rename APK files before pack: *.keep_gz to *.gz at: " + assetsDir;
+
+                renameFiles("${projectDir}/src/main/assets", ".keep_gz", ".gz")
+                println "---> Rename src files: *.keep_gz to *.gz at: " + projectDir;
+            }
+        }
+    }
+}
+
+def renameFiles(String dirPath, String fromExt, String toExt) {
+    fileTree(dir: dirPath, include: "**/*" + fromExt).each { file ->
+        if (file.name.endsWith(fromExt) && file.isFile()) {
+            def newName = file.name.substring(0, file.name.length() - fromExt.length()) + toExt
+            file.renameTo(new File(file.parent, newName))
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.webkit:webkit:1.13.0'
+    implementation 'androidx.browser:browser:1.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
